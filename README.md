@@ -8,3 +8,8 @@ https://mrcloudbook.com/devsecops-ci-cd-deploying-a-secure-hotstar-clone-even-if
 
  when file is green coloured in linux that means its executable
 
+
+## EXTRAS ------>
+
+### Steps to make docker work properly we have to add it to the user(Ubuntu)
+![Screenshot (907)](https://github.com/Maharshibhatnagar/Hotstar-Clone/assets/119435144/466e77c8-8813-4a90-b3d9-558aa2d3e8de)
