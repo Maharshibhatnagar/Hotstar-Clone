@@ -1,0 +1,22 @@
+   explanation of main.py last part
+   
+   
+    # Iterate through each pull request and extract the creator's name
+    for pull in pull_requests:
+        creator = pull['user']['login']
+        if creator in pr_creators:
+            pr_creators[creator] += 1
+        else:
+            pr_creators[creator] = 1
+
+
+This part is like going through a list of pull requests on GitHub, one by one. For each pull request, it finds out who created it (the creator's name) and keeps track of how many pull requests that person has made. If the person's name is already in the tracking list (pr_creators dictionary), it increases the count by 1. If it's the first time encountering that person's name, it adds them to the list with a count of 1.
+
+
+    # Display the dictionary of PR creators and their counts
+    print("PR Creators and Counts:")
+    for creator, count in pr_creators.items():
+        print(f"{creator}: {count} PR(s)")
+
+
+Here, it's like showing a report of all the people who created pull requests and how many pull requests each person has made. It prints out a list saying something like "User ABC created 3 pull requests, User XYZ created 5 pull requests," and so on. It's just summarizing the information about who contributed how much.
