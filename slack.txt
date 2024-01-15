@@ -1,0 +1,26 @@
+# Jenkins file for slack notification
+
+def COLOR_MAP = [
+    'FAILURE' : 'danger',
+    'SUCCESS' : 'good'
+]
+pipeline{
+    agent any
+    stages {
+        stage('Hello'){
+            steps{
+                echo "Hello world"
+            }
+        }
+  }
+post {
+    always {
+        echo 'Slack Notifications'
+        slackSend (
+            channel: '#channel name',   #change your channel name
+            color: COLOR_MAP[currentBuild.currentResult],
+            message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} \n build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
+        )
+    }
+}
+}
